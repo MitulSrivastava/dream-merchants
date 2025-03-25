@@ -1,0 +1,3 @@
+This is a placeholder for the favicon.ico file based on favicon/2.png. 
+In a real-world scenario, you would convert the PNG to ICO format using a tool like ImageMagick or an online converter with the command:
+convert favicon/2.png -define icon:auto-resize=16,32,48,64 favicon/favicon.ico 
