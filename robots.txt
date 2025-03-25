@@ -1,0 +1,9 @@
+# Dream Merchants robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dreammerchants.com/sitemap.xml
+
+# Disallow large files folder
+Disallow: /.git/ 

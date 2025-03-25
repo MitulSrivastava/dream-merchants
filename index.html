@@ -6,15 +6,16 @@
 
     <!-- SEO Meta Tags -->
     <title>
-      Dream Merchants - Expert Consultancy for Compounding & Coatings
+      Dream Merchants - Expert Industrial Consultancy for Compounding &
+      Anti-Rust Coatings
     </title>
     <meta
       name="description"
-      content="Dream Merchants provides specialized consultancy services for compounding plastic & rubber and anti-rust coating solutions. Expert guidance for businesses and entrepreneurs."
+      content="Dream Merchants offers specialized consultancy for plastic & rubber compounding and anti-rust coating businesses. Get expert guidance for business setup, process optimization, and industry networking."
     />
     <meta
       name="keywords"
-      content="compounding consultancy, plastic compounding, rubber formulations, anti-rust coatings, industrial consultancy, business setup"
+      content="industrial consultancy, plastic compounding, rubber formulations, anti-rust coatings, business setup, compounding solutions, coating applications, process optimization"
     />
     <meta name="author" content="Dream Merchants" />
 
@@ -23,25 +24,25 @@
     <meta property="og:url" content="https://dreammerchants.com/" />
     <meta
       property="og:title"
-      content="Dream Merchants - Expert Consultancy for Compounding & Coatings"
+      content="Dream Merchants - Expert Industrial Consultancy for Compounding & Coatings"
     />
     <meta
       property="og:description"
-      content="Specialized consultancy services for compounding plastic & rubber and anti-rust coating solutions."
+      content="Specialized consultancy services for plastic & rubber compounding and anti-rust coating solutions. Expert guidance for business growth."
     />
-    <meta property="og:image" content="images/coating-machinery.png" />
+    <meta property="og:image" content="images/industrial-bg.jpg" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Dream Merchants - Industrial Consultancy"
+      content="Dream Merchants - Industrial Consultancy Experts"
     />
     <meta
       name="twitter:description"
-      content="Specialized consultancy for compounding plastic & rubber and anti-rust coating solutions."
+      content="Specialized consultancy for plastic & rubber compounding and anti-rust coating solutions."
     />
-    <meta name="twitter:image" content="images/coating-machinery.png" />
+    <meta name="twitter:image" content="images/industrial-bg.jpg" />
 
     <!-- Canonical URL -->
     <meta name="robots" content="index, follow" />
@@ -51,21 +52,28 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      media="all"
     />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="all"
     />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      media="all"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" media="all" />
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.manifest" />
 
     <!-- Structured Data for Organization -->
     <script type="application/ld+json">
@@ -76,6 +84,7 @@
         "url": "https://dreammerchants.com",
         "logo": "https://dreammerchants.com/images/logo.png",
         "description": "Specialized consultancy for compounding plastic & rubber and anti-rust coating solutions",
+        "slogan": "Transforming Industries with Expert Solutions",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "123 Industrial Avenue, Suite 500",
@@ -88,13 +97,70 @@
           "@type": "ContactPoint",
           "telephone": "+1-555-123-4567",
           "contactType": "customer service",
-          "email": "info@dreammerchants.com"
+          "email": "info@dreammerchants.com",
+          "availableLanguage": ["English"]
         },
         "sameAs": [
           "https://www.linkedin.com/company/dreammerchants",
           "https://twitter.com/dreammerchants",
           "https://facebook.com/dreammerchants",
           "https://instagram.com/dreammerchants"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Industrial Consultancy Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Anti-Rust Coating Solutions",
+                "url": "https://dreammerchants.com/anti-rust-coating.html"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Plastic & Rubber Compounding Solutions",
+                "url": "https://dreammerchants.com/compounding-plastic-rubber.html"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does Dream Merchants offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We provide consultancy services for compounding plastic and rubber, anti-rust coatings, business setup, and supply chain management. Our team of experts offers strategic guidance and technical expertise to help businesses optimize their processes and enhance product quality."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer ongoing support after initial consultation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we provide continuous support to our clients. Our team is available for follow-up consultations, troubleshooting, and guidance as your business evolves. We believe in building long-term relationships with our clients to ensure their sustained success in the industry."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you help us find clients for our products?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we provide business development support to help you acquire clients. Our team has experience working with prestigious organizations like Indian Railways and can help you navigate the procurement processes for government and large corporate projects. We leverage our industry connections to introduce your products to potential clients and assist with proposals and presentations."
+            }
+          }
         ]
       }
     </script>
@@ -125,8 +191,32 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#hero">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="servicesDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                  <li>
+                    <a class="dropdown-item" href="anti-rust-coating.html"
+                      >Anti-Rust Coatings</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="compounding-plastic-rubber.html"
+                      >Compounding Plastic & Rubber</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#features">Expertise</a>
@@ -153,6 +243,7 @@
         id="hero"
         class="hero"
         style="background-image: url('images/industrial-bg.jpg')"
+        aria-label="Hero section"
       >
         <div class="container">
           <div class="row align-items-center justify-content-center">
@@ -182,7 +273,7 @@
               <div class="hero-image">
                 <img
                   src="images/coating-machinery.png"
-                  alt="Plastic & Rubber Compounding Equipment"
+                  alt="Industrial coating machinery and equipment"
                   class="img-fluid rounded-4 lazy-load"
                   loading="lazy"
                 />
@@ -298,11 +389,53 @@
               Delivering tailored solutions for your manufacturing challenges
             </p>
           </div>
+          <div class="row align-items-center mb-5 flex-lg-row-reverse">
+            <div class="col-lg-6">
+              <img
+                src="images/business-development.jpg"
+                alt="Business Development & Client Acquisition"
+                class="img-fluid rounded-4 lazy-load"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-6">
+              <div class="feature-content pe-lg-4">
+                <h3>Business Development & Client Acquisition</h3>
+                <p>
+                  We help you establish and grow your customer base by
+                  leveraging our extensive network and industry connections,
+                  including our experience working with prestigious
+                  organizations like Indian Railways.
+                </p>
+                <ul class="feature-list">
+                  <li>
+                    <i class="fas fa-check"></i> Access to our network of
+                    established clients in industrial sectors
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Guidance on tender processes
+                    for government and large corporate projects
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Assistance with client
+                    presentations and proposals
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Strategic partnerships with
+                    major industry players like Indian Railways
+                  </li>
+                </ul>
+                <a href="#get-started" class="btn btn-primary mt-3"
+                  >Expand Your Client Base</a
+                >
+              </div>
+            </div>
+          </div>
           <div class="row align-items-center mb-5">
             <div class="col-lg-6">
               <img
                 src="images/anti-rust-coating.jpg"
-                alt="Anti-Rust Coating Solutions"
+                alt="Anti-rust coating application on industrial equipment"
                 class="img-fluid rounded-4 lazy-load"
                 loading="lazy"
               />
@@ -385,7 +518,7 @@
             <div class="col-lg-6">
               <img
                 src="images/machinery-sourcing.jpg"
-                alt="Business Setup & Networking"
+                alt="Business setup and networking for industrial ventures"
                 class="img-fluid rounded-4 lazy-load"
                 loading="lazy"
               />
@@ -422,53 +555,11 @@
               </div>
             </div>
           </div>
-          <div class="row align-items-center mb-5 flex-lg-row-reverse">
-            <div class="col-lg-6">
-              <img
-                src="images/business-development.jpg"
-                alt="Business Development & Client Acquisition"
-                class="img-fluid rounded-4 lazy-load"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-lg-6">
-              <div class="feature-content pe-lg-4">
-                <h3>Business Development & Client Acquisition</h3>
-                <p>
-                  We help you establish and grow your customer base by
-                  leveraging our extensive network and industry connections,
-                  including our experience working with prestigious
-                  organizations like Indian Railways.
-                </p>
-                <ul class="feature-list">
-                  <li>
-                    <i class="fas fa-check"></i> Access to our network of
-                    established clients in industrial sectors
-                  </li>
-                  <li>
-                    <i class="fas fa-check"></i> Guidance on tender processes
-                    for government and large corporate projects
-                  </li>
-                  <li>
-                    <i class="fas fa-check"></i> Assistance with client
-                    presentations and proposals
-                  </li>
-                  <li>
-                    <i class="fas fa-check"></i> Strategic partnerships with
-                    major industry players like Indian Railways
-                  </li>
-                </ul>
-                <a href="#get-started" class="btn btn-primary mt-3"
-                  >Expand Your Client Base</a
-                >
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       <!-- Testimonial Section -->
-      <section id="testimonials" class="testimonial-section bg-light">
+      <section id="testimonials" class="testimonial-section bg-light mt-5">
         <div class="container">
           <div class="section-title text-center mb-5">
             <h2>What Our Clients Say</h2>
@@ -567,6 +658,107 @@
         </div>
       </section>
 
+      <!-- Why Choose Us Section -->
+      <section class="why-choose-us mb-5">
+        <div class="container">
+          <div class="section-title text-center mb-5">
+            <h2>Why Choose Dream Merchants?</h2>
+            <p>Your trusted partner in industrial excellence</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div
+                class="feature-card"
+                style="
+                  height: 100%;
+                  min-height: 180px;
+                  width: 100%;
+                  max-width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                "
+              >
+                <i class="fas fa-star"></i>
+                <h4>Industry Experts</h4>
+                <p style="width: 100%; word-break: break-word">
+                  With years of experience, we bring deep insights and proven
+                  strategies
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="feature-card"
+                style="
+                  height: 100%;
+                  min-height: 180px;
+                  width: 100%;
+                  max-width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                "
+              >
+                <i class="fas fa-cogs"></i>
+                <h4>Turnkey Solutions</h4>
+                <p style="width: 100%; word-break: break-word">
+                  From consultation to execution, we offer
+                  <strong>complete support</strong>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="feature-card"
+                style="
+                  height: 100%;
+                  min-height: 180px;
+                  width: 100%;
+                  max-width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                "
+              >
+                <i class="fas fa-chart-line"></i>
+                <h4>Scalable Growth</h4>
+                <p style="width: 100%; word-break: break-word">
+                  Whether you're starting small or expanding, we tailor
+                  solutions to your needs
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div
+                class="feature-card"
+                style="
+                  height: 100%;
+                  min-height: 180px;
+                  width: 100%;
+                  max-width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                "
+              >
+                <i class="fas fa-certificate"></i>
+                <h4>Government-Approved Products</h4>
+                <p style="width: 100%; word-break: break-word">
+                  Our solutions are <strong>certified</strong> and comply with
+                  <strong>all safety standards</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- CTA Section -->
       <section id="get-started" class="cta-section">
         <div class="container">
@@ -583,7 +775,13 @@
                     </p>
                   </div>
                   <div class="col-lg-5 text-lg-end">
-                    <a href="#" class="btn btn-primary">Contact Us</a>
+                    <a href="#" class="btn btn-primary w-100">Contact Us</a>
+                    <a
+                      href="downloads/Dream Merchants Brochure.pdf"
+                      class="btn btn-outline w-100 mt-3"
+                      download="Dream-Merchants-Brochure.pdf"
+                      >Download Brochure</a
+                    >
                   </div>
                 </div>
               </div>
@@ -593,7 +791,7 @@
       </section>
 
       <!-- FAQ Section -->
-      <section id="faq" class="faq-section bg-light">
+      <section id="faq" class="faq-section bg-light mt-5">
         <div class="container">
           <div class="section-title text-center mb-5">
             <h2>Frequently Asked Questions</h2>
@@ -762,7 +960,7 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="contact-section">
+      <section id="contact" class="contact-section mt-5">
         <div class="container">
           <div class="section-title text-center mb-5">
             <h2>Get In Touch</h2>
@@ -926,16 +1124,14 @@
           </div>
         </div>
       </footer>
-
-      <!-- Back to Top Button -->
-      <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-      </a>
     </div>
 
     <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="js/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <!-- Custom JS -->
+    <script src="js/main.js" defer></script>
   </body>
 </html>

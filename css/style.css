@@ -200,11 +200,13 @@ a:hover {
 
 .navbar-light .navbar-nav .nav-link:hover {
   color: var(--accent-color);
+  background-color: transparent;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
   color: var(--accent-color);
   font-weight: 700;
+  background-color: transparent;
 }
 
 .navbar-light .navbar-nav .nav-link.active::after {
@@ -408,6 +410,24 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding: 12px 0;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent !important;
+  }
+
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link:hover {
+    background-color: transparent !important;
+  }
+
+  .navbar-light .navbar-nav .nav-link.active::after,
+  .navbar-light .navbar-nav .nav-link:hover::after {
+    left: 35%;
+    right: 35%;
   }
 }
 
@@ -1277,7 +1297,6 @@ video {
 @media print {
   .navbar,
   .footer,
-  .back-to-top,
   .no-print {
     display: none !important;
   }
@@ -1339,4 +1358,956 @@ video {
 
 .hero-btns .btn-outline:hover {
   box-shadow: 0 6px 20px rgba(33, 53, 85, 0.2);
+}
+
+/* Override Bootstrap's default active link styles */
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* Fix any bootstrap focus states */
+.navbar-light .navbar-nav .nav-link:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Ensure no box on click */
+.navbar-light .navbar-nav .nav-link:active {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Contact Form Styles */
+.contact-form-wrapper {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact-form .form-control {
+  height: 50px;
+  padding: 10px 20px;
+  border: 2px solid rgba(33, 53, 85, 0.1);
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  background-color: var(--background-color);
+}
+
+.contact-form textarea.form-control {
+  height: auto;
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(216, 196, 182, 0.2);
+  outline: none;
+}
+
+.contact-form .form-control::placeholder {
+  color: var(--light-text);
+  opacity: 0.7;
+}
+
+.contact-form .btn-primary {
+  width: 100%;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(33, 53, 85, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(33, 53, 85, 0.3);
+}
+
+/* Contact Info Styles Enhancement */
+.contact-info {
+  background-color: var(--primary-color);
+  padding: 40px;
+  border-radius: 20px 20px 0 0;
+  height: 100%;
+  color: var(--white);
+}
+
+.contact-info-item {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.contact-info-item i {
+  font-size: 24px;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.contact-info-item h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.contact-info-item p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.contact-social h4 {
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+.contact-social .social-links {
+  gap: 15px;
+}
+
+.contact-social .social-links a {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.contact-social .social-links a:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsiveness for Contact Section */
+@media (max-width: 991px) {
+  .contact-form-wrapper,
+  .contact-info {
+    margin-bottom: 30px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-info-item {
+    text-align: center;
+  }
+
+  .contact-form .btn-primary {
+    max-width: 100%;
+    margin: 10px auto 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-form-wrapper {
+    padding: 25px;
+  }
+
+  .contact-info {
+    padding: 25px;
+  }
+
+  .contact-form .form-control {
+    font-size: 14px;
+  }
+}
+
+.dropdown-menu {
+  background-color: var(--white);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  margin-top: 5px;
+}
+
+.dropdown-item {
+  color: var(--text-color);
+  padding: 10px 25px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(216, 196, 182, 0.1);
+  color: var(--accent-color);
+}
+
+.dropdown-divider {
+  margin: 5px 0;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Mobile Styles */
+@media (max-width: 991px) {
+  .dropdown-menu {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .dropdown-item {
+    padding: 8px 15px;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .dropdown-item:hover {
+    background-color: transparent;
+  }
+
+  .dropdown-divider {
+    display: none;
+  }
+}
+
+/* Service Pages Styles */
+.service-hero {
+  background: var(--primary-color);
+  padding: 100px 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(33, 53, 85, 0.9),
+    rgba(33, 53, 85, 0.7)
+  );
+  z-index: 1;
+}
+
+.service-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.service-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.service-hero .lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.intro-text {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-text .lead {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.sector-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.sector-card:hover {
+  transform: translateY(-5px);
+}
+
+.sector-card i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.sector-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.service-category {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.service-category h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.service-category ul {
+  padding-left: 1.5rem;
+}
+
+.service-category ul li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.service-category ul ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.cta-section {
+  background: var(--primary-color);
+  padding: 4rem 2rem;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 4rem;
+}
+
+.cta-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-buttons .btn-outline {
+  border-color: #fff;
+  color: #fff;
+}
+
+.contact-buttons .btn-outline:hover {
+  background: #fff;
+  color: var(--primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .service-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .service-hero .lead {
+    font-size: 1.25rem;
+  }
+
+  .sector-card,
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .service-category {
+    padding: 1.5rem;
+  }
+}
+
+/* Center all text content in service pages */
+.service-content {
+  text-align: center;
+}
+
+.service-content p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.service-content ul {
+  text-align: center;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.service-content ul ul {
+  text-align: center;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.service-content li {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.service-content strong {
+  display: inline-block;
+}
+
+/* Adjust card text alignment */
+.sector-card p,
+.feature-card p {
+  text-align: center;
+}
+
+/* Ensure proper spacing for centered content */
+.service-category {
+  text-align: center;
+}
+
+.service-category ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.service-category ul ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .service-content ul,
+  .service-content ul ul {
+    padding-left: 0;
+  }
+
+  .service-category ul,
+  .service-category ul ul {
+    padding-left: 0;
+  }
+}
+
+/* Center the last feature card in the row */
+.why-choose-us .row .col-md-6:last-child {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .row .col-md-6:last-child {
+    max-width: 100%;
+  }
+}
+
+/* Center and make the Footwear & Fashion card wider */
+.industry-sectors .row .col-md-6:last-child {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+}
+
+@media (max-width: 768px) {
+  .industry-sectors .row .col-md-6:last-child {
+    max-width: 100%;
+  }
+}
+
+/* Enhanced Responsive Styles */
+@media (max-width: 1199px) {
+  .container {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+
+  .navbar {
+    margin: 5px 10px;
+    width: calc(100% - 20px);
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    padding: 10px 0;
+    margin: 5px 10px;
+    width: calc(100% - 20px);
+  }
+
+  .navbar-collapse {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .nav-item {
+    margin: 5px 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    padding: 10px;
+    display: inline-block;
+  }
+
+  .social-nav-icons {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    background-color: var(--primary-color);
+    border: none;
+  }
+
+  .dropdown-item {
+    color: var(--white);
+    padding: 8px;
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+  }
+
+  .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .service-hero h1 {
+    font-size: 32px;
+  }
+
+  .service-content h2 {
+    font-size: 28px;
+  }
+
+  .service-content h3 {
+    font-size: 22px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .footer-wrapper {
+    padding: 50px 0 20px;
+  }
+
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 15px;
+  }
+
+  .navbar {
+    padding: 8px 0;
+    margin: 5px 8px;
+    width: calc(100% - 16px);
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .service-hero {
+    padding: 80px 0 40px;
+  }
+
+  .service-hero h1 {
+    font-size: 28px;
+  }
+
+  .service-hero .lead {
+    font-size: 16px;
+  }
+
+  .gallery-section .gallery-item {
+    margin-bottom: 15px;
+  }
+
+  .gallery-caption {
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .service-content p,
+  .service-content li {
+    font-size: 15px;
+  }
+
+  .service-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .service-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sector-card,
+  .feature-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .sector-card h4,
+  .feature-card h4 {
+    font-size: 18px;
+  }
+
+  .intro-text .lead {
+    font-size: 16px;
+  }
+
+  .footer {
+    padding-top: 50px;
+  }
+
+  .footer-widget h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .copyright {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+
+  /* Make service cards full width on mobile */
+  .col-md-6 {
+    width: 100%;
+  }
+
+  /* Center text in footer widgets */
+  .footer-widget {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Adjust image gallery on mobile */
+  .gallery-section .col-md-3 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .service-hero h1 {
+    font-size: 24px;
+  }
+
+  .service-hero .lead {
+    font-size: 15px;
+  }
+
+  .section-title h2 {
+    font-size: 22px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-btns .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .contact-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .service-content h2 {
+    font-size: 22px;
+  }
+
+  .service-content h3 {
+    font-size: 18px;
+  }
+
+  .sector-card i,
+  .feature-card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .cta-section h2 {
+    font-size: 22px;
+  }
+
+  .cta-section .lead {
+    font-size: 15px;
+  }
+
+  /* Make gallery items full width on small phones */
+  .gallery-section .col-md-3 {
+    width: 100%;
+  }
+
+  /* Stack footer columns */
+  .footer .col-lg-2,
+  .footer .col-lg-4 {
+    width: 100%;
+  }
+
+  /* Adjust newsletter form */
+  .newsletter-form {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar-brand {
+    font-size: 16px;
+  }
+
+  .service-hero h1 {
+    font-size: 20px;
+  }
+
+  .service-hero .lead {
+    font-size: 14px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+}
+
+/* Improved dropdown menu styling */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(216, 196, 182, 0.2);
+  color: var(--accent-color);
+}
+
+.dropdown-item.active:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* Center all text in service content */
+.service-content p,
+.service-content h2,
+.service-content h3,
+.service-content h4,
+.service-content ul,
+.service-content li {
+  text-align: center;
+}
+
+.service-content ul,
+.service-content ol {
+  display: inline-block;
+  text-align: left;
+  padding-left: 0;
+}
+
+.service-content ul li,
+.service-content ol li {
+  text-align: left;
+}
+
+/* Center cards in service sections */
+.sector-card,
+.feature-card {
+  text-align: center;
+}
+
+/* Last feature card in the row */
+.why-choose-us .row .col-md-6:last-child .feature-card {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .row .col-md-6:last-child .feature-card {
+    max-width: 100%;
+  }
+
+  /* Improve lists in mobile view */
+  .service-content ul,
+  .service-content ol {
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  /* Center card text */
+  .sector-card p,
+  .feature-card p {
+    text-align: center;
+  }
+}
+
+/* Custom style for footwear and fashion card */
+.industry-sectors .sector-card:nth-child(5) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+}
+
+@media (max-width: 768px) {
+  .industry-sectors .sector-card:nth-child(5) {
+    max-width: 100%;
+  }
+}
+
+/* Fix navbar toggler */
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  color: var(--white);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Fix image aspect ratio */
+.gallery-item img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Responsive improvements */
+@media (max-width: 480px) {
+  .service-content .col-6 {
+    width: 100%;
+  }
+}
+
+/* Fix form responsiveness */
+@media (max-width: 575px) {
+  .newsletter-form input {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .newsletter-form button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-form .form-control {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
 }

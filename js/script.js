@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Navigation bar scroll effect
   const navbar = document.querySelector(".navbar");
-  const backToTopButton = document.querySelector(".back-to-top");
 
   // Get all sections that have an ID defined
   const sections = document.querySelectorAll("section[id]");
@@ -94,10 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update navbar appearance
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
-      backToTopButton?.classList.add("active");
     } else {
       navbar.classList.remove("scrolled");
-      backToTopButton?.classList.remove("active");
     }
 
     // Debounce scroll event for performance
@@ -203,9 +200,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Mobile navigation menu toggle
+  // Enhanced mobile navigation menu handling
   const navbarToggler = document.querySelector(".navbar-toggler");
   const navbarNav = document.querySelector("#navbarNav");
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
   if (navbarToggler && navbarNav) {
     document.addEventListener("click", function (e) {
@@ -220,7 +218,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Close the menu when clicking on a nav link on mobile
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    const navLinks = document.querySelectorAll(
+      ".navbar-nav .nav-link:not(.dropdown-toggle)"
+    );
     navLinks.forEach((link) => {
       link.addEventListener("click", function () {
         if (navbarNav.classList.contains("show")) {
@@ -228,6 +228,94 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+
+    // Improve dropdown behavior on mobile
+    if (window.innerWidth < 992) {
+      // For mobile: prevent immediate closing of dropdown menu when clicking dropdown items
+      const dropdownItems = document.querySelectorAll(".dropdown-item");
+      dropdownItems.forEach((item) => {
+        item.addEventListener("click", function (e) {
+          // Close the mobile menu after selecting an item
+          if (navbarNav.classList.contains("show")) {
+            setTimeout(() => {
+              navbarToggler.click();
+            }, 150);
+          }
+        });
+      });
+    }
+  }
+
+  // Improve dropdown handling for touch devices
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function (e) {
+      if (window.innerWidth < 992) {
+        e.preventDefault();
+        const parent = this.parentElement;
+        const dropdownMenu = parent.querySelector(".dropdown-menu");
+
+        // Toggle open/closed state
+        if (dropdownMenu.classList.contains("show")) {
+          dropdownMenu.classList.remove("show");
+        } else {
+          // Close other open dropdowns first
+          document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+            if (menu !== dropdownMenu) {
+              menu.classList.remove("show");
+            }
+          });
+          dropdownMenu.classList.add("show");
+        }
+      }
+    });
+  });
+
+  // Handle window resize - adjust for desktop/mobile transitions
+  let resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      // Close mobile menu on window resize
+      if (navbarNav && navbarNav.classList.contains("show")) {
+        navbarToggler.click();
+      }
+
+      // Reset any open dropdowns
+      document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+        menu.classList.remove("show");
+      });
+    }, 250);
+  });
+
+  // Add touch event support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Detect swipe right to close mobile menu
+  if (navbarNav) {
+    navbarNav.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      false
+    );
+
+    navbarNav.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      },
+      false
+    );
+  }
+
+  function handleSwipe() {
+    if (touchEndX - touchStartX > 100 && navbarNav.classList.contains("show")) {
+      // Swipe right detected - close menu
+      navbarToggler.click();
+    }
   }
 
   // Set the current year in the copyright text
@@ -237,8 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
     copyrightYear.innerHTML = `&copy; ${year} Dream Merchants. All Rights Reserved.`;
   }
 
-  // Animate on scroll initialization (we're using a simple version here)
-  // In a production site, you might want to use AOS or another library
+  // Animate on scroll initialization
   const animateElements = document.querySelectorAll(".animate");
 
   function checkIfInView() {
@@ -253,5 +340,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", checkIfInView);
-  checkIfInView(); // Check on initial load
+  window.addEventListener("load", checkIfInView);
+
+  // Fix iOS 100vh issue
+  function setVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+
+  setVh();
+  window.addEventListener("resize", setVh);
 });
