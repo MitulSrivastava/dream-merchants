@@ -69,6 +69,66 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" media="all" />
 
+    <!-- Image Loading Fix Styles -->
+    <style>
+      /* Prevent images from disappearing */
+      img {
+        display: block;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      /* Image container styles */
+      .hero-image,
+      .feature-content,
+      .testimonial-img,
+      .partner-logo {
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Proper lazy loading transition */
+      .lazy-load {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .lazy-load.loaded {
+        opacity: 1;
+      }
+
+      /* Prevent layout shift */
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+      }
+
+      .partner-logo {
+        width: 180px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      .testimonial-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+
+      /* Ensure images maintain space */
+      img[loading="lazy"] {
+        min-height: 1px;
+      }
+
+      /* Control height of Specialized Expertise section images */
+      .methodology-section .img-fluid {
+        max-height: 400px;
+        object-fit: cover;
+        width: 100%;
+      }
+    </style>
+
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -240,21 +300,39 @@
                   </li>
                 </ul>
               </li>
+
               <li class="nav-item">
-                <a class="nav-link" href="#features">Expertise</a>
+                <a class="nav-link" href="about.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#testimonials">Testimonials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
             <div class="social-nav-icons">
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a
+                href="https://www.linkedin.com/company/dream-merchants-17/"
+                target="_blank"
+                rel="noopener"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61574520894449"
+                target="_blank"
+                rel="noopener"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/dreammerchants17/"
+                target="_blank"
+                rel="noopener"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://wa.me/+919810092306"
+                target="_blank"
+                rel="noopener"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -294,10 +372,20 @@
             <div class="col-lg-6">
               <div class="hero-image">
                 <img
-                  src="images/coating-machinery.png"
+                  src="images/Hero.webp"
+                  srcset="
+                    images/Hero.webp  400w,
+                    images/Hero.webp  800w,
+                    images/Hero.webp 1200w
+                  "
+                  sizes="(max-width: 768px) 400px,
+                         (max-width: 1200px) 800px,
+                         1200px"
                   alt="Industrial coating machinery and equipment"
                   class="img-fluid rounded-4 lazy-load"
                   loading="lazy"
+                  width="800"
+                  height="600"
                 />
               </div>
             </div>
@@ -414,7 +502,7 @@
           <div class="row align-items-center mb-5 flex-lg-row-reverse">
             <div class="col-lg-6">
               <img
-                src="images/business-development.jpg"
+                src="images/Business Development & Client Acquisition.webp"
                 alt="Business Development & Client Acquisition"
                 class="img-fluid rounded-4 lazy-load"
                 loading="lazy"
@@ -539,7 +627,7 @@
           <div class="row align-items-center">
             <div class="col-lg-6">
               <img
-                src="images/machinery-sourcing.jpg"
+                src="images/Business Setup & Networking.webp"
                 alt="Business setup and networking for industrial ventures"
                 class="img-fluid rounded-4 lazy-load"
                 loading="lazy"
@@ -1009,9 +1097,30 @@
                 <div class="contact-social">
                   <h4>Follow Us</h4>
                   <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a
+                      href="https://www.linkedin.com/company/dream-merchants-17/"
+                      target="_blank"
+                      rel="noopener"
+                      ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                    <a
+                      href="https://wa.me/+919810092306"
+                      target="_blank"
+                      rel="noopener"
+                      ><i class="fab fa-whatsapp"></i
+                    ></a>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61574520894449"
+                      target="_blank"
+                      rel="noopener"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a
+                      href="https://www.instagram.com/dreammerchants17/"
+                      target="_blank"
+                      rel="noopener"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -1071,77 +1180,128 @@
       <footer class="footer">
         <div class="container">
           <div class="footer-wrapper">
-            <div class="row">
-              <div class="col-lg-4 col-md-6">
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                  <h4>Connect With Our Experts</h4>
-                  <form class="newsletter-form">
-                    <input type="email" placeholder="Your email" />
-                    <button type="submit">
-                      <i class="fas fa-paper-plane"></i>
-                    </button>
-                  </form>
-                </div>
-                <div class="footer-widget mt-4">
-                  <p class="mb-2">Address</p>
-                  <p>123 Industrial Avenue, Suite 500, Boston, MA 02110</p>
-                </div>
-                <div class="footer-widget mt-4">
-                  <p class="mb-2">Phone</p>
-                  <p>+1 (555) 123-4567</p>
-                </div>
-                <div class="footer-widget mt-4">
-                  <p class="mb-2">Email</p>
-                  <p>info@dreammerchants.com</p>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-6">
-                <div class="footer-widget">
-                  <h4>Quick Links</h4>
+                  <h4 class="mb-2">Contact</h4>
                   <ul class="footer-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#features">Expertise</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li>
+                      <i class="fas fa-envelope me-2"></i>
+                      <a href="mailto:dtechinbox2@gmail.com"
+                        >dtechinbox2@gmail.com</a
+                      >
+                    </li>
+                    <li>
+                      <i class="fas fa-phone me-2"></i>
+                      <a href="tel:+919810092309">+91 98100 92309</a>
+                    </li>
+                    <li>
+                      <i class="fas fa-phone me-2"></i>
+                      <a href="tel:+919810092306">+91 98100 92306</a>
+                    </li>
+                    <li>
+                      <i class="fas fa-map-marker-alt me-2"></i>
+                      <span>A-105 sector-163</span> <br />Noida, Uttar Pradesh
+                      <br />India
+                    </li>
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-2 col-md-6">
+              <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                  <h4>Our Expertise</h4>
+                  <h4 class="mb-2">Quick Links</h4>
                   <ul class="footer-links">
-                    <li><a href="#">Plastic Compounding</a></li>
-                    <li><a href="#">Rubber Formulations</a></li>
-                    <li><a href="#">Anti-Rust Coatings</a></li>
-                    <li><a href="#">Business Consultancy</a></li>
-                    <li><a href="#">Supply Chain Solutions</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                      <a href="anti-rust-coating.html">Anti-Rust Coatings</a>
+                    </li>
+                    <li>
+                      <a href="compounding-plastic-rubber.html"
+                        >Plastic & Rubber</a
+                      >
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6">
+              <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                  <h4>Information</h4>
+                  <h4 class="mb-2">Our Services</h4>
                   <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li>
+                      <a href="anti-rust-coating.html">Anti-Rust Solutions</a>
+                    </li>
+                    <li>
+                      <a href="compounding-plastic-rubber.html"
+                        >Plastic Compounding</a
+                      >
+                    </li>
+                    <li>
+                      <a href="compounding-plastic-rubber.html"
+                        >Rubber Formulations</a
+                      >
+                    </li>
+                    <li><a href="about.html#services">Business Setup</a></li>
+                    <li>
+                      <a href="about.html#services">Technical Consulting</a>
+                    </li>
                   </ul>
                 </div>
-                <div class="footer-widget mt-4">
-                  <h4>Follow Us</h4>
-                  <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="footer-widget">
+                  <h4 class="mb-2">Information</h4>
+                  <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#vision">Our Vision</a></li>
+                    <li><a href="about.html#mission">Our Mission</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+                  <div class="social-links mt-3">
+                    <h4 class="mb-2">Follow Us</h4>
+                    <div class="social-icons d-flex gap-3">
+                      <a
+                        href="https://www.linkedin.com/company/dream-merchants-17/"
+                        target="_blank"
+                        rel="noopener"
+                        class="social-icon"
+                      >
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <a
+                        href="https://wa.me/+919810092306"
+                        target="_blank"
+                        rel="noopener"
+                        class="social-icon"
+                      >
+                        <i class="fab fa-whatsapp"></i>
+                      </a>
+                      <a
+                        href="https://www.facebook.com/profile.php?id=61574520894449"
+                        target="_blank"
+                        rel="noopener"
+                        class="social-icon"
+                      >
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/dreammerchants17/"
+                        target="_blank"
+                        rel="noopener"
+                        class="social-icon"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="copyright">
-              <p>&copy; 2023 Dream Merchants. All Rights Reserved.</p>
+            <div class="copyright text-center mt-3">
+              <p class="mb-0">
+                &copy; 2023 Dream Merchants. All Rights Reserved.
+              </p>
             </div>
           </div>
         </div>
@@ -1155,5 +1315,41 @@
     ></script>
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- Image Loading Fix Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Handle lazy loading images
+        const lazyImages = document.querySelectorAll("img.lazy-load");
+
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+              }
+              img.classList.add("loaded");
+              observer.unobserve(img);
+            }
+          });
+        });
+
+        lazyImages.forEach((img) => {
+          imageObserver.observe(img);
+          // Ensure image stays visible
+          img.style.opacity = "1";
+          img.style.visibility = "visible";
+        });
+
+        // Backup for older browsers
+        if (!("IntersectionObserver" in window)) {
+          lazyImages.forEach((img) => {
+            img.src = img.dataset.src || img.src;
+            img.classList.add("loaded");
+          });
+        }
+      });
+    </script>
   </body>
 </html>

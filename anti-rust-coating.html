@@ -54,6 +54,64 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" media="all" />
     
+    <!-- Image Styles -->
+    <style>
+      /* Gallery image styles */
+      .gallery-item {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 4/3;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(33, 53, 85, 0.8);
+        color: white;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      /* Sector card icon styles */
+      .sector-card i {
+        font-size: 2.5rem;
+        color: #213555;
+        margin-bottom: 1rem;
+      }
+
+      /* Prevent images from disappearing */
+      img {
+        display: block;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      /* Proper lazy loading transition */
+      .lazy-load {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .lazy-load.loaded {
+        opacity: 1;
+      }
+    </style>
+    
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/generated/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/generated/favicon-32x32.png">
@@ -131,39 +189,26 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                   <li>
-                    <a
-                      class="dropdown-item active"
-                      href="anti-rust-coating.html"
-                      >Anti-Rust Coatings</a
-                    >
+                    <a class="dropdown-item active" href="anti-rust-coating.html">Anti-Rust Coatings</a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a
-                      class="dropdown-item"
-                      href="compounding-plastic-rubber.html"
-                      >Compounding Plastic & Rubber</a
-                    >
+                    <a class="dropdown-item" href="compounding-plastic-rubber.html">Compounding Plastic & Rubber</a>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#features">Expertise</a>
+                <a class="nav-link" href="about.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#testimonials"
-                  >Testimonials</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#contact">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
             <div class="social-nav-icons">
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/dream-merchants-17/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61574520894449" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/dreammerchants17/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/+919810092306" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
@@ -272,7 +317,10 @@
                       <img
                         src="images/placeholder1.jpg"
                         alt="Before Treatment"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">Before Treatment</div>
                     </div>
@@ -282,7 +330,10 @@
                       <img
                         src="images/placeholder2.jpg"
                         alt="After Treatment"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">After Treatment</div>
                     </div>
@@ -292,7 +343,10 @@
                       <img
                         src="images/placeholder3.jpg"
                         alt="Industrial Application"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">Industrial Application</div>
                     </div>
@@ -302,7 +356,10 @@
                       <img
                         src="images/placeholder4.jpg"
                         alt="Railway Protection"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">Railway Protection</div>
                     </div>
@@ -312,7 +369,10 @@
                       <img
                         src="images/placeholder5.jpg"
                         alt="Infrastructure Project"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">Infrastructure Project</div>
                     </div>
@@ -322,7 +382,10 @@
                       <img
                         src="images/placeholder6.jpg"
                         alt="Marine Application"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">Marine Application</div>
                     </div>
@@ -332,7 +395,10 @@
                       <img
                         src="images/placeholder7.jpg"
                         alt="Equipment Protection"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">Equipment Protection</div>
                     </div>
@@ -342,7 +408,10 @@
                       <img
                         src="images/placeholder8.jpg"
                         alt="Quality Testing"
-                        class="img-fluid rounded"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="400"
+                        height="300"
                       />
                       <div class="gallery-caption">Quality Testing</div>
                     </div>
@@ -571,77 +640,86 @@
       <footer class="footer">
         <div class="container">
           <div class="footer-wrapper">
-            <div class="row">
-              <div class="col-lg-4 col-md-6">
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                  <h4>Connect With Our Experts</h4>
-                  <form class="newsletter-form">
-                    <input type="email" placeholder="Your email" />
-                    <button type="submit">
-                      <i class="fas fa-paper-plane"></i>
-                    </button>
-                  </form>
-                </div>
-                <div class="footer-widget mt-4">
-                  <p class="mb-2">Address</p>
-                  <p>123 Industrial Avenue, Suite 500, Boston, MA 02110</p>
-                </div>
-                <div class="footer-widget mt-4">
-                  <p class="mb-2">Phone</p>
-                  <p>+1 (555) 123-4567</p>
-                </div>
-                <div class="footer-widget mt-4">
-                  <p class="mb-2">Email</p>
-                  <p>info@dreammerchants.com</p>
+                  <h4 class="mb-2">Contact</h4>
+                  <ul class="footer-links">
+                    <li>
+                      <i class="fas fa-envelope me-2"></i>
+                      <a href="mailto:dtechinbox2@gmail.com">dtechinbox2@gmail.com</a>
+                    </li>
+                    <li>
+                      <i class="fas fa-phone me-2"></i>
+                      <a href="tel:+919810092309">+91 98100 92309</a>
+                    </li>
+                    <li>
+                      <i class="fas fa-phone me-2"></i>
+                      <a href="tel:+919810092306">+91 98100 92306</a>
+                    </li>
+                    <li>
+                      <i class="fas fa-map-marker-alt me-2"></i>
+                      <span>A-105 sector-163</span> <br />Noida, Uttar Pradesh
+                      <br />India
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="col-lg-2 col-md-6">
+              <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                  <h4>Quick Links</h4>
+                  <h4 class="mb-2">Quick Links</h4>
                   <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#features">Expertise</a></li>
-                    <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="anti-rust-coating.html">Anti-Rust Coatings</a></li>
+                    <li><a href="compounding-plastic-rubber.html">Plastic & Rubber</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-2 col-md-6">
+              <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                  <h4>Our Expertise</h4>
+                  <h4 class="mb-2">Our Services</h4>
                   <ul class="footer-links">
-                    <li><a href="#">Plastic Compounding</a></li>
-                    <li><a href="#">Rubber Formulations</a></li>
-                    <li><a href="#">Anti-Rust Coatings</a></li>
-                    <li><a href="#">Business Consultancy</a></li>
-                    <li><a href="#">Supply Chain Solutions</a></li>
+                    <li><a href="anti-rust-coating.html">Anti-Rust Solutions</a></li>
+                    <li><a href="compounding-plastic-rubber.html">Plastic Compounding</a></li>
+                    <li><a href="compounding-plastic-rubber.html">Rubber Formulations</a></li>
+                    <li><a href="about.html#services">Business Setup</a></li>
+                    <li><a href="about.html#services">Technical Consulting</a></li>
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6">
+              <div class="col-lg-3 col-md-6">
                 <div class="footer-widget">
-                  <h4>Information</h4>
+                  <h4 class="mb-2">Information</h4>
                   <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html#vision">Our Vision</a></li>
+                    <li><a href="about.html#mission">Our Mission</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                   </ul>
-                </div>
-                <div class="footer-widget mt-4">
-                  <h4>Follow Us</h4>
-                  <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  <div class="social-links mt-3">
+                    <h4 class="mb-2">Follow Us</h4>
+                    <div class="social-icons d-flex gap-3">
+                      <a href="https://www.linkedin.com/company/dream-merchants-17/" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <a href="https://wa.me/+919810092306" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                      </a>
+                      <a href="https://www.facebook.com/profile.php?id=61574520894449" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="https://www.instagram.com/dreammerchants17/" target="_blank" rel="noopener" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="copyright">
-              <p>&copy; 2023 Dream Merchants. All Rights Reserved.</p>
+            <div class="copyright text-center mt-3">
+              <p class="mb-0">&copy; 2023 Dream Merchants. All Rights Reserved.</p>
             </div>
           </div>
         </div>
