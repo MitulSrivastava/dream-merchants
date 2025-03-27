@@ -90,6 +90,37 @@
         }
       }
     </script>
+
+    <!-- Gallery image styles -->
+    <style>
+      .gallery-item {
+        position: relative;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        transition: transform 0.3s ease;
+        border-radius: 0.25rem;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-caption {
+        position: static;
+        background: none;
+        color: #213555;
+        padding: 0.5rem 0;
+        text-align: center;
+        font-weight: 500;
+        margin-top: 0.5rem;
+      }
+    </style>
   </head>
   <body>
     <div class="main-wrapper">
@@ -256,6 +287,26 @@
                   </div>
                 </div>
               </section>
+
+              <!-- Image Gallery -->
+              <div class="gallery-section mb-5">
+                <h2 class="text-center mb-4">Our Work & Industries We Serve</h2>
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                    <div class="gallery-item">
+                      <img
+                        src="images/Compounding Plastic & Rubber.webp"
+                        alt="Rubber-Plastic Compounds Machinery"
+                        class="img-fluid rounded lazy-load"
+                        loading="lazy"
+                        width="800"
+                        height="450"
+                      />
+                      <div class="gallery-caption">Rubber-Plastic Compounds Machinery</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <section class="services-offered mb-5">
                 <h2>Our Expertise: How We Help You Succeed</h2>
