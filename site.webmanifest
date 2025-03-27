@@ -1,19 +1,19 @@
 {
   "name": "Dream Merchants",
-  "short_name": "DM",
+  "short_name": "Dream Merchants",
   "icons": [
     {
-      "src": "/favicon/generated/android-chrome-192x192.png",
+      "src": "favicon/generated/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/favicon/generated/android-chrome-512x512.png",
+      "src": "favicon/generated/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "theme_color": "#213555",
-  "background_color": "#f5efe7",
+  "theme_color": "#f5efe7",
+  "background_color": "#ffffff",
   "display": "standalone"
 }
